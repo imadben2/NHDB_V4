@@ -14,11 +14,10 @@ class ServeurController extends Controller
 
         if(request()->ajax()) {
             return datatables()->of(Serveur::select('*'))
-                ->addColumn('action', 'server_actions')
+                ->addColumn('action', 'server-actions')
                 ->rawColumns(['action'])
                 ->addIndexColumn()
                 ->make(true);
-
         }
         return view('admin.serveur.server_index');
     }
