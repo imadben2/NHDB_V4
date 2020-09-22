@@ -24,7 +24,7 @@
                 </li>
                 <li class=" navigation-header"><span>Apps</span>
                 </li>
-                <li class="{{ (request()->is('serveurs')) ? 'active' : '' }} nav-item"><a href="{{ route('serveurs.index') }}"><i class="feather icon-server"></i><span class="menu-title" data-i18n="Email">Serveurs</span></a>
+                <li class="{{ (request()->is('serveurs_datatable_index')) ? 'active' : '' }} nav-item"><a href="{{ route('serveurs_datatable_index') }}"><i class="feather icon-server"></i><span class="menu-title" data-i18n="Email">Serveurs</span></a>
                 </li>
                 <li class=" nav-item"><a href="app-chat.html"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Chat">Mailing</span></a>
                 </li>

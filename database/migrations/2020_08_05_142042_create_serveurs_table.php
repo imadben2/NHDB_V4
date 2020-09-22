@@ -14,8 +14,8 @@ class CreateServeursTable extends Migration
     public function up()
     {
         Schema::create('serveurs', function (Blueprint $table) {
-
-            $table->id();
+        
+            $table->id('id_serveur');
             $table->string('nom_serveur');
             $table->integer('numero');
             $table->timestamps();

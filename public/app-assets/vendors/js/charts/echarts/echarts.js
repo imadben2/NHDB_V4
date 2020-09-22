@@ -11792,7 +11792,7 @@ function mappingToExists(exists, newCptOptions) {
  * @return {Array.<Object>} The input.
  */
 function makeIdAndName(mapResult) {
-    // We use this id to hash component Models and view instances
+    // We use this id to hash component models and view instances
     // in echarts. id can be specified by user, or auto generated.
 
     // The id generation rule ensures new view instance are able
@@ -22016,7 +22016,7 @@ function initBase(baseOption) {
 /**
  * @inner
  * @param {Array.<string>|string} types model types
- * @return {Object} key: {string} type, value: {Array.<Object>} Models
+ * @return {Object} key: {string} type, value: {Array.<Object>} models
  */
 function getComponentsByTypes(componentsMap, types) {
     if (!isArray(types)) {
@@ -67868,7 +67868,7 @@ function showTooltip(dataByCoordSys, axisInfo, payloadInfo, value) {
         axisId: axisModel.id,
         value: value,
         // Caustion: viewHelper.getValueLabel is actually on "view stage", which
-        // depends that all Models have been updated. So it should not be performed
+        // depends that all models have been updated. So it should not be performed
         // here. Considering axisPointerModel used here is volatile, which is hard
         // to be retrieve in TooltipView, we prepare parameters here.
         valueLabelOpt: {

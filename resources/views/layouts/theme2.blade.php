@@ -13,15 +13,8 @@
     <link rel="apple-touch-icon" href="{{ asset('app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
-  
-  
-  
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-
-
-    
     <script src="{{ asset('app-assets/js/core/libraries/jquery.min.js')}}"></script>
     <link href="{{ asset('app-assets/vendors/css/vendors.min.css')}}" rel="stylesheet">
     <link href="{{ asset('app-assets/css/bootstrap.css')}}" rel="stylesheet">
@@ -30,6 +23,7 @@
     <link href="{{ asset('app-assets/css/components.css')}}" rel="stylesheet">
     <link href="{{ asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
+
 
 
 

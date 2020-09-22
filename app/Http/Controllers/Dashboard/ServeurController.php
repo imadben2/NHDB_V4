@@ -6,15 +6,16 @@ use Datatables;
 use App\Http\Controllers\Controller;
 use App\Models\Serveur;
 use Illuminate\Http\Request;
+
 class ServeurController extends Controller
 {
 
     public function index()
     {
 
-        if(request()->ajax()) {
+        if (request()->ajax()) {
             return datatables()->of(Serveur::select('*'))
-                ->addColumn('action', 'server_actions')
+                ->addColumn('action', 'admin.serveur.actions')
                 ->rawColumns(['action'])
                 ->addIndexColumn()
                 ->make(true);
@@ -33,59 +34,46 @@ class ServeurController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $ServerId = $request->id;
+
+        $server = Serveur::updateOrCreate(
+            [
+                'id' => $ServerId
+            ],
+            [
+                'nom_serveur' => $request->nom_serveur,
+                'numero' => $request->numero_server
+            ]);
+        return Response()->json($server);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Serveur  $serveur
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Serveur $serveur)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Serveur  $serveur
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Serveur $serveur)
+
+    public function edit(Request $request)
     {
-        //
+        $where = array('id' => $request->id);
+        $server = Serveur::where($where)->first();
+
+        return Response()->json($server);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Serveur  $serveur
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Serveur $serveur)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Serveur  $serveur
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Serveur $serveur)
+
+    public function destroy(Request $request)
     {
-        //
+        $book = Serveur::where('id', $request->id)->delete();
+
+        return Response()->json($book);
     }
 }
