@@ -4,10 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DataTablesController;
 
-Route::group(['namespace' => 'Dashboard', 'middleware' => 'auth:admin'], function () {
+Route::group(['namespace' => 'Dashboard'], function () {
 
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
-
 
 //////////////////////////////////// Route Serveur /////////////////////////////////////////
     Route::get('serveurs_datatable_index', 'ServeurController@index')->name('serveurs_datatable_index');
