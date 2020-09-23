@@ -14,7 +14,7 @@ class CreateRenouvellemntsTable extends Migration
     public function up()
     {
         Schema::create('renouvellemnts', function (Blueprint $table) {
-            $table->id('id_renouvellemnts');
+            $table->id();
             $table->integer('duree');
             $table->date('date_renouvellemnts');
             $table->date('date_expiration');

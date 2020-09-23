@@ -14,7 +14,7 @@ class CreateClientsTable extends Migration
     public function up()
     {
         Schema::create('clients', function (Blueprint $table) {
-            $table->id('id_clients');
+            $table->id();
             $table->string('nom_client');
             $table->string('nom_contact');
             $table->string('fonction_contact');
@@ -40,3 +40,7 @@ class CreateClientsTable extends Migration
         Schema::dropIfExists('clients');
     }
 }
+
+
+
+

@@ -14,7 +14,7 @@ class CreateFormulesTable extends Migration
     public function up()
     {
         Schema::create('formules', function (Blueprint $table) {
-            $table->id('id_formules');
+            $table->id();
             $table->string('nom_formules');
             $table->float('espace_disque');
             $table->string('espace_unite');

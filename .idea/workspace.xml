@@ -19,7 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a7703b-ba03-4f42-a1b4-d2a5c3e1c097" name="Default Changelist" comment="" />
+    <list default="true" id="e5a7703b-ba03-4f42-a1b4-d2a5c3e1c097" name="Default Changelist" comment="client start">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/clients/actions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ClientsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Clients.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_140336_create_domaines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_140336_create_domaines_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_141124_create_abonements_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_141124_create_abonements_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_142042_create_serveurs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_142042_create_serveurs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_142506_create_formules_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_142506_create_formules_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_142942_create_relances_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_142942_create_relances_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_143206_create_clients_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_143939_create_renouvellemnts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_143939_create_renouvellemnts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_144123_create_type_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_144123_create_type_clients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/theme.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/theme.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,12 +69,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/clients" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\NHDB\NHDB_v4\app\Http\Controllers\Dashboard" />
+      <recent name="C:\NHDB\NHDB_v4\app\Models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\NHDB\NHDB_v4\resources\views\admin\clients" />
       <recent name="C:\NHDB\NHDB_v4\database\migrations" />
       <recent name="C:\NHDB\NHDB_v4\routes" />
     </key>
@@ -88,6 +109,7 @@
       <workItem from="1600803489682" duration="1940000" />
       <workItem from="1600848554671" duration="705000" />
       <workItem from="1600865609753" duration="1289000" />
+      <workItem from="1600867286120" duration="3229000" />
     </task>
     <task id="LOCAL-00001" summary="serveur fini">
       <created>1600775209249</created>
@@ -103,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600866873510</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="client start">
+      <created>1600867543138</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600867543138</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,14 +168,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1600720093781" />
+    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600869188020">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1600869188020" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1600720577630">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1600720577630" />
-    <state x="233" y="70" key="Vcs.Push.Dialog.v2" timestamp="1600866921282">
+    <state x="233" y="70" key="Vcs.Push.Dialog.v2" timestamp="1600867552528">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="70" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1600866921282" />
+    <state x="233" y="70" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1600867552528" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

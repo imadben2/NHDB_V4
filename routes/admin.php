@@ -14,6 +14,12 @@ Route::group(['namespace' => 'Dashboard'], function () {
     Route::post('serveurs_datatable_update', 'ServeurController@edit');
     Route::post('serveurs_datatable_store', 'ServeurController@store');
 /////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////// Route Client /////////////////////////////////////////
+    Route::get('clients_index', 'ClientController@index')->name('clients_index');
+    Route::post('clients_delete', 'ClientController@destroy');
+    Route::post('clients_update', 'ClientController@edit');
+    Route::post('clients_store', 'ClientController@store');
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 
 });

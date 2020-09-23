@@ -14,7 +14,7 @@ class CreateAbonementsTable extends Migration
     public function up()
     {
         Schema::create('abonements', function (Blueprint $table) {
-            $table->id('id_abonements');
+            $table->id();
             $table->date('date_expiration');
             $table->date('duree_abonements');
             $table->string('prix_facutre');

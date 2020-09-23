@@ -2,22 +2,28 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
-
+use App\Models\Client;
+use Datatables;
 use Illuminate\Http\Request;
 
-class ClientsController extends Controller
+class ClientController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
-        $clients =  Clients::all();
 
-        return view('admin.clients.client', ['clients' => $clients ]);
+        if (request()->ajax()) {
+
+            return datatables()->of(Client::select('*'))
+                ->addColumn('action', 'admin.clients.actions')
+                ->rawColumns(['action'])
+                ->addIndexColumn()
+                ->make(true);
+
+        }
+
+        return view('admin.clients.client');
     }
 
     /**
@@ -52,37 +58,27 @@ class ClientsController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Clients  $clients
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Clients $clients)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Clients  $clients
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Clients $clients)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Clients  $clients
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Clients $clients)
     {
         //
     }
 }
+
+
+
+
+
+

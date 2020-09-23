@@ -14,7 +14,7 @@ class CreateDomainesTable extends Migration
     public function up()
     {
         Schema::create('domaines', function (Blueprint $table) {
-            $table->id('id_domaine');
+            $table->id();
             $table->string('domaine');
             $table->integer('prix');
             $table->timestamps();

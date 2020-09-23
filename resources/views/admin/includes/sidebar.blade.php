@@ -28,7 +28,7 @@
                 </li>
                 <li class=" nav-item"><a href="app-chat.html"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Chat">Mailing</span></a>
                 </li>
-                <li class="{{ (request()->is('clients')) ? 'active' : '' }} nav-item"><a  href=""><i class="feather icon-users"></i><span class="menu-title" data-i18n="Todo">Clients</span></a>
+                <li class="{{ (request()->is('clients_index')) ? 'active' : '' }} nav-item"><a  href="{{ route('clients_index') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Todo">Clients</span></a>
                 </li>
                 <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Formules & NDD</span></a>
                 </li>

@@ -14,7 +14,7 @@ class CreateRelancesTable extends Migration
     public function up()
     {
         Schema::create('relances', function (Blueprint $table) {
-            $table->id('id_relances');
+            $table->id();
             $table->float('jours_n');
             $table->string('sujet_relances');
             $table->string('msg_relances');
