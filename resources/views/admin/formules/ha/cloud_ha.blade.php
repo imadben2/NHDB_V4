@@ -15,7 +15,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Serveurs</h4>
+                    <h4 class="card-title">Hebergement Cloud HA</h4>
 
 
                     <button class="btn btn-primary btn-print mr-1 mb-1" id="addNewBook" data-toggle="modal"><i
@@ -27,11 +27,11 @@
                         <table class="table zero-configuration" id="datatable-ajax-crud">
                             <thead>
                             <tr>
-                                <th>id</th>
-                                <th>Nom De Clients</th>
-
-                                <th>Email</th>
-                                <th>Date De creation</th>
+                                <th>Nom de La formule</th>
+                                <th>Espace Disque</th>
+                                <th>Unité</th>
+                                <th>Compte Emails</th>
+                                <th>Prix</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -58,18 +58,46 @@
                 <form action="javascript:void(0)" id="addEditBookForm" name="addEditBookForm" class="form-horizontal"
                       method="POST">
                     <input type="hidden" name="id" id="id">
+
+
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Nom Serveur</label>
+                        <label for="name" class="col-sm-8 control-label">Nom de La formule</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="nom_serveur" name="nom_serveur" maxlength="50"
+                            <input type="text" class="form-control" id="nom_de_La_formule1" name="nom_de_La_formule1" maxlength="50"
                                    required="">
                         </div>
                     </div>
 
+
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Numéro Serveur</label>
+                        <label for="name" class="col-sm-8 control-label">Espace Disque</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="numero_server" name="numero_server"
+                            <input type="text" class="form-control" id="espace_Disque" name="espace_Disque"
+                                   maxlength="50" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-8 control-label">Unité</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="unite" name="unite"
+                                   maxlength="50" required="">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-8 control-label">Compte Emails</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="compte_Emails" name="compte_Emails"
+                                   maxlength="50" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-8 control-label">Prix</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="prix" name="prix"
                                    maxlength="50" required="">
                         </div>
                     </div>
@@ -106,13 +134,14 @@
         $('#datatable-ajax-crud').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('clients_index') }}",
+            ajax: "{{ url('indexHa') }}",
             columns: [
-                {data: 'id', name: 'id', 'visible': false},
-                {data: 'nom_client', name: 'nom_client'},
 
-                {data: 'email_primaire', name: 'email_primaire'},
-                {data: 'created_at', name: 'created_at'},
+                {data: 'nom_formules', name: 'nom_formules'},
+                {data: 'espace_disque', name: 'espace_disque'},
+                {data: 'espace_unite', name: 'espace_unite'},
+                {data: 'nombre_mail', name: 'nombre_mail'},
+                {data: 'prix', name: 'prix'},
                 {data: 'action', name: 'action', orderable: false},
             ],
             order: [[0, 'desc']]
@@ -121,7 +150,7 @@
 
         $('#addNewBook').click(function () {
             $('#addEditBookForm').trigger("reset");
-            $('#ajaxBookModel').html("Ajouter Client");
+            $('#ajaxBookModel').html("Hebergement Cloud HA");
             $('#ajax-book-model').modal('show');
         });
 
@@ -132,15 +161,19 @@
             // ajax
             $.ajax({
                 type: "POST",
-                url: "{{ url('serveurs_datatable_update') }}",
+                url: "{{ url('indexHa_update') }}",
                 data: {id: id},
                 dataType: 'json',
                 success: function (res) {
-                    $('#ajaxBookModel').html("Modifier Serveur");
+                    $('#ajaxBookModel').html("Modifier Formule");
                     $('#ajax-book-model').modal('show');
                     $('#id').val(res.id);
-                    $('#nom_serveur').val(res.nom_serveur);
-                    $('#numero_server').val(res.numero);
+                    $('#nom_de_La_formule1').val(res.nom_formules);
+                    $('#espace_Disque').val(res.espace_disque);
+                    $('#unite').val(res.espace_unite);
+                    $('#compte_Emails').val(res.nombre_mail);
+                    $('#prix').val(res.prix);
+
                 }
             });
 
@@ -154,7 +187,7 @@
                 // ajax
                 $.ajax({
                     type: "POST",
-                    url: "{{ url('serveurs_datatable_delete') }}",
+                    url: "{{ url('indexHa_delete') }}",
                     data: {id: id},
                     dataType: 'json',
                     success: function (res) {
@@ -169,17 +202,24 @@
 
         $('body').on('click', '#btn-save', function (event) {
             var id = $("#id").val();
-            var nom_serveur = $("#nom_serveur").val();
-            var numero_server = $("#numero_server").val();
+
+            var espace_Disque = $("#espace_Disque").val();
+            var unite = $("#unite").val();
+            var compte_Emails = $("#compte_Emails").val();
+            var nom_de_La_formule1 = $("#nom_de_La_formule1").val();
+            var prix = $("#prix").val();
             $("#btn-save").html('Please Wait...');
             $("#btn-save").attr("disabled", true);
             $.ajax({
                 type: "POST",
-                url: "{{ url('serveurs_datatable_store') }}",
+                url: "{{ url('indexHa_store') }}",
                 data: {
                     id: id,
-                    nom_serveur: nom_serveur,
-                    numero_server: numero_server,
+                    nom_de_La_formule: nom_de_La_formule1,
+                    espace_Disque: espace_Disque,
+                    unite: unite,
+                    compte_Emails: compte_Emails,
+                    prix: prix,
                 },
                 dataType: 'json',
                 success: function (res) {

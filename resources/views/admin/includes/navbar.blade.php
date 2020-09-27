@@ -23,11 +23,7 @@
                                 <input class="form-control input" type="text" placeholder="Explore NHDB..." tabindex="0" data-search="template-list">
                                 <ul class="search-list search-list-bookmark"></ul>
                             </div>
-                            <!-- select.bookmark-select-->
-                            <!--   option Chat-->
-                            <!--   option email-->
-                            <!--   option todo-->
-                            <!--   option Calendar-->
+
                         </li>
                     </ul>
                 </div>
@@ -150,7 +146,9 @@
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                             <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">IMADE</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a>
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Modifier Profile</a><a class="dropdown-item" href="app-email.html">
+                                <i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="{{route('admin.logout')}}">
+                                <i class="feather icon-message-square"></i> Déconnexion</a>
 
                             <div class="dropdown-divider">
 

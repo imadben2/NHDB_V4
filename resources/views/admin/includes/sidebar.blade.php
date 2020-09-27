@@ -30,8 +30,18 @@
                 </li>
                 <li class="{{ (request()->is('clients_index')) ? 'active' : '' }} nav-item"><a  href="{{ route('clients_index') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Todo">Clients</span></a>
                 </li>
-                <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Formules & NDD</span></a>
+
+                <li class=" nav-item"><a href="#"><i class="feather icon-layers"></i><span class="menu-title" data-i18n="Ecommerce">Formules & NDD</span></a>
+                    <ul class="menu-content">
+                        <li><a href="{{route('indexMutalise')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Mutualisé</span></a>
+                        </li>
+                        <li><a href="{{route('indexVps')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Cloud VPS</span></a>
+                        </li>
+                        <li><a href="{{route('indexHa')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Cloud HA</span></a>
+                        </li>
+                    </ul>
                 </li>
+
                 <li class=" nav-item"><a href="#"><i class="feather icon-layers"></i><span class="menu-title" data-i18n="Ecommerce">Produits</span></a>
                     <ul class="menu-content">
                         <li><a href="app-ecommerce-shop.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Certificat ssl</span></a>
