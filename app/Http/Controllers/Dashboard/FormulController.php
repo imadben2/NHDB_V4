@@ -12,19 +12,18 @@ class FormulController extends Controller
     public function index()
     {
 
-        if (request()->is('indexMutalise')) {
-            if (request()->ajax()) {
+        if (request()->is('admin/indexMutalise')) {
 
+            if (request()->ajax()) {
                 return datatables()->of(Formul::select('*')->where('type','=', 'mutalise'))
                     ->addColumn('action', 'admin.formules.ha.actions')
                     ->rawColumns(['action'])
                     ->addIndexColumn()
                     ->make(true);
-
             }
             return view('admin.formules.mutualise.mutualise');
         }
-        if (request()->is('indexHa')) {
+        if (request()->is('admin/indexHa')) {
             if (request()->ajax()) {
 
                 return datatables()->of(Formul::select('*')->where('type','=', 'ha'))
@@ -36,7 +35,7 @@ class FormulController extends Controller
             }
             return view('admin.formules.ha.cloud_ha');
         }
-        if (request()->is('indexVps')) {
+        if (request()->is('admin/indexVps')) {
             if (request()->ajax()) {
 
                 return datatables()->of(Formul::select('*')->where('type','=', 'vps'))
@@ -60,7 +59,7 @@ class FormulController extends Controller
     public function store(Request $request)
     {
 
-        if (request()->is('indexHa_store')) {
+        if (request()->is('admin/indexHa_store')) {
             $FormuleId = $request->id;
             $server = Formul::updateOrCreate(
                 [
@@ -78,7 +77,7 @@ class FormulController extends Controller
                 ]);
         }
 
-        if (request()->is('Mutalise_store')) {
+        if (request()->is('admin/Mutalise_store')) {
             $FormuleId = $request->id;
             $server = Formul::updateOrCreate(
                 [
@@ -96,7 +95,7 @@ class FormulController extends Controller
                 ]);
         }
 
-        if (request()->is('Vps_store')) {
+        if (request()->is('admin/Vps_store')) {
             $FormuleId = $request->id;
             $server = Formul::updateOrCreate(
                 [
@@ -140,19 +139,19 @@ class FormulController extends Controller
 
     public function destroy(Request $request)
     {
-        if (request()->is('indexHa_delete')) {
+        if (request()->is('admin/indexHa_delete')) {
             $book = Formul::where('id', $request->id)->delete();
 
             return Response()->json($book);
         }
 
-        if (request()->is('Mutalise_delete')) {
+        if (request()->is('admin/Mutalise_delete')) {
             $book = Formul::where('id', $request->id)->delete();
 
             return Response()->json($book);
         }
 
-        if (request()->is('Vps_delete')) {
+        if (request()->is('admin/Vps_delete')) {
             $book = Formul::where('id', $request->id)->delete();
 
             return Response()->json($book);

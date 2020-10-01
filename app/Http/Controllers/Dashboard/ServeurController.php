@@ -14,6 +14,7 @@ class ServeurController extends Controller
     {
 
         if (request()->ajax()) {
+
             return datatables()->of(Serveur::select('*'))
                 ->addColumn('action', 'admin.serveur.actions')
                 ->rawColumns(['action'])

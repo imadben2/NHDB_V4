@@ -134,7 +134,7 @@
         $('#datatable-ajax-crud').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('indexVps') }}",
+            ajax: "{{ url('admin/indexVps') }}",
             columns: [
 
                 {data: 'nom_formules', name: 'nom_formules'},
@@ -161,7 +161,7 @@
             // ajax
             $.ajax({
                 type: "POST",
-                url: "{{ url('Vps_update') }}",
+                url: "{{ url('admin/Vps_update') }}",
                 data: {id: id},
                 dataType: 'json',
                 success: function (res) {
@@ -187,7 +187,7 @@
                 // ajax
                 $.ajax({
                     type: "POST",
-                    url: "{{ url('Vps_delete') }}",
+                    url: "{{ url('admin/Vps_delete') }}",
                     data: {id: id},
                     dataType: 'json',
                     success: function (res) {
@@ -212,7 +212,7 @@
             $("#btn-save").attr("disabled", true);
             $.ajax({
                 type: "POST",
-                url: "{{ url('Vps_store') }}",
+                url: "{{ url('admin/Vps_store') }}",
                 data: {
                     id: id,
                     nom_de_La_formule: nom_de_La_formule1,

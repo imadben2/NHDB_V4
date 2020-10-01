@@ -18,9 +18,10 @@ class LoginController extends Controller
 
     public function postlogin(AdminloginRequest $request){
 
+        //dd($request);
         //validation
-        $remember_me=$request->has('remember_me')? true:false;
-        if (auth()->guard('admin')->attempt(['email'=> $request->input("email"),'password'=>$request->input('password')],$remember_me)){
+        //$remember_me=$request->has('remember_me')? true:false;
+        if (auth()->guard('admin')->attempt(['email'=> $request->input("email"),'password'=>$request->input('password')])){
               return redirect()->route('admin.dashboard');
         }
         Session::flash('error', 'les information non valide');

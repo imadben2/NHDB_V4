@@ -98,7 +98,7 @@
         $('#datatable-ajax-crud').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('serveurs_datatable_index') }}",
+            ajax: "{{ url('admin/serveurs_datatable_index') }}",
             columns: [
                 {data: 'id', name: 'id', 'visible': false},
                 {data: 'nom_serveur', name: 'nom_serveur'},
@@ -121,7 +121,7 @@
             // ajax
             $.ajax({
                 type: "POST",
-                url: "{{ url('serveurs_datatable_update') }}",
+                url: "{{ url('admin/serveurs_datatable_update') }}",
                 data: {id: id},
                 dataType: 'json',
                 success: function (res) {
@@ -143,7 +143,7 @@
                 // ajax
                 $.ajax({
                     type: "POST",
-                    url: "{{ url('serveurs_datatable_delete') }}",
+                    url: "{{ url('admin/serveurs_datatable_delete') }}",
                     data: {id: id},
                     dataType: 'json',
                     success: function (res) {
@@ -164,7 +164,7 @@
             $("#btn-save").attr("disabled", true);
             $.ajax({
                 type: "POST",
-                url: "{{ url('serveurs_datatable_store') }}",
+                url: "{{ url('admin/serveurs_datatable_store') }}",
                 data: {
                     id: id,
                     nom_serveur: nom_serveur,

@@ -64,7 +64,7 @@
 
 
     @yield('ajax_data_table_js')
-
+    @yield('dashboard_ecommerce')
 
 </body>
 <!-- END: Body-->

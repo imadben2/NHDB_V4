@@ -20,23 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5a7703b-ba03-4f42-a1b4-d2a5c3e1c097" name="Default Changelist" comment="start formulee">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/AdminLoginRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/formules/ha/actions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/formules/ha/cloud_ha.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/formules/mutualise/actions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/formules/mutualise/mutualise.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/formules/vps/actions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/formules/vps/cloud_vps.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/clients/ajouter_client.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/FormulesController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/FormulController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/FormulController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ServeurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ServeurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Formules.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_142506_create_formules_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_23_141057_create_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_141057_create_clients_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/clients/client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/clients/client.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/formules/ha/cloud_ha.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formules/ha/cloud_ha.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/formules/mutualise/mutualise.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formules/mutualise/mutualise.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/formules/vps/cloud_vps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formules/vps/cloud_vps.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/serveur/server_index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/serveur/server_index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/serveur/serveurs.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/theme.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/theme.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/theme2.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,21 +73,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/clients" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\NHDB\NHDB_v4\app\Models" />
+      <recent name="C:\NHDB\NHDB_v4\app\Http\Controllers\Dashboard" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\NHDB\NHDB_v4\resources\views\admin\clients" />
       <recent name="C:\NHDB\NHDB_v4\app\Http" />
       <recent name="C:\NHDB\NHDB_v4\resources\views\admin\formules\mutualise" />
       <recent name="C:\NHDB\NHDB_v4\resources\views\admin\formules\vps" />
       <recent name="C:\NHDB\NHDB_v4\resources\views\admin\formules\ha" />
-      <recent name="C:\NHDB\NHDB_v4\resources\views\admin\formules" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\NHDB\NHDB_v4\app\Models" />
-      <recent name="C:\NHDB\NHDB_v4\app\Http\Controllers\Dashboard" />
     </key>
   </component>
   <component name="RunManager">
@@ -124,7 +125,10 @@
       <workItem from="1601120808569" duration="606000" />
       <workItem from="1601145161053" duration="8169000" />
       <workItem from="1601198752373" duration="645000" />
-      <workItem from="1601208113995" duration="623000" />
+      <workItem from="1601208113995" duration="4371000" />
+      <workItem from="1601281361938" duration="3976000" />
+      <workItem from="1601458417144" duration="2138000" />
+      <workItem from="1601467569036" duration="6790000" />
     </task>
     <task id="LOCAL-00001" summary="serveur fini">
       <created>1600775209249</created>
@@ -154,7 +158,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600870565968</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="start formulee">
+      <created>1601208954849</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601208954849</updated>
+    </task>
+    <task id="LOCAL-00006" summary="start formulee">
+      <created>1601208966228</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601208966228</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,18 +214,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1600954566864" />
-    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601147509039">
+    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601473528293">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1601147509039" />
+    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1601473528293" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1600939188718">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1600939188718" />
-    <state x="233" y="70" key="Vcs.Push.Dialog.v2" timestamp="1601145622240">
+    <state x="233" y="70" key="Vcs.Push.Dialog.v2" timestamp="1601211899685">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="70" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601145622240" />
+    <state x="233" y="70" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601211899685" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

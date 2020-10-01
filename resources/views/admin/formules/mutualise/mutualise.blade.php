@@ -134,7 +134,7 @@
         $('#datatable-ajax-crud').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('indexMutalise') }}",
+            ajax: "{{ url('admin/indexMutalise') }}",
             columns: [
 
                 {data: 'nom_formules', name: 'nom_formules'},
@@ -161,7 +161,7 @@
             // ajax
             $.ajax({
                 type: "POST",
-                url: "{{ url('Mutalise_update') }}",
+                url: "{{ url('admin/Mutalise_update') }}",
                 data: {id: id},
                 dataType: 'json',
                 success: function (res) {
@@ -187,7 +187,7 @@
                 // ajax
                 $.ajax({
                     type: "POST",
-                    url: "{{ url('Mutalise_delete') }}",
+                    url: "{{ url('admin/Mutalise_delete') }}",
                     data: {id: id},
                     dataType: 'json',
                     success: function (res) {
@@ -212,7 +212,7 @@
             $("#btn-save").attr("disabled", true);
             $.ajax({
                 type: "POST",
-                url: "{{ url('Mutalise_store') }}",
+                url: "{{ url('admin/Mutalise_store') }}",
                 data: {
                     id: id,
                     nom_de_La_formule: nom_de_La_formule1,

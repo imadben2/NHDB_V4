@@ -17,9 +17,12 @@
                 <div class="card-header">
                     <h4 class="card-title">Serveurs</h4>
 
+                    <a href="{{route('clients_Ajouter')}}" class="btn btn-primary btn-print mr-1 mb-1" role="button" aria-pressed="true"><i
+                            class="feather icon-plus"></i></a>
 
-                    <button class="btn btn-primary btn-print mr-1 mb-1" id="addNewBook" data-toggle="modal"><i
-                            class="feather icon-plus"></i></button>
+
+
+
                 </div>
                 <div class="card-content">
 
@@ -27,9 +30,8 @@
                         <table class="table zero-configuration" id="datatable-ajax-crud">
                             <thead>
                             <tr>
-                                <th>id</th>
+                                <th>Id</th>
                                 <th>Nom De Clients</th>
-
                                 <th>Email</th>
                                 <th>Date De creation</th>
                                 <th>Action</th>
@@ -47,48 +49,7 @@
 
 
 
-<!-- boostrap add and edit book model -->
-<div class="modal fade" id="ajax-book-model" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="ajaxBookModel"></h4>
-            </div>
-            <div class="modal-body">
-                <form action="javascript:void(0)" id="addEditBookForm" name="addEditBookForm" class="form-horizontal"
-                      method="POST">
-                    <input type="hidden" name="id" id="id">
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Nom Serveur</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="nom_serveur" name="nom_serveur" maxlength="50"
-                                   required="">
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Numéro Serveur</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="numero_server" name="numero_server"
-                                   maxlength="50" required="">
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-offset-2 col-sm-10">
-
-                        <button type="submit" class="btn btn-primary" id="btn-save" value="addNewBook">Souvegarder
-                        </button>
-
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuller</button>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
@@ -106,11 +67,10 @@
         $('#datatable-ajax-crud').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('clients_index') }}",
+            ajax: "{{ url('admin/clients_index') }}",
             columns: [
                 {data: 'id', name: 'id', 'visible': false},
                 {data: 'nom_client', name: 'nom_client'},
-
                 {data: 'email_primaire', name: 'email_primaire'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'action', name: 'action', orderable: false},
@@ -119,79 +79,6 @@
         });
 
 
-        $('#addNewBook').click(function () {
-            $('#addEditBookForm').trigger("reset");
-            $('#ajaxBookModel').html("Ajouter Client");
-            $('#ajax-book-model').modal('show');
-        });
-
-        $('body').on('click', '.edit', function () {
-
-            var id = $(this).data('id');
-
-            // ajax
-            $.ajax({
-                type: "POST",
-                url: "{{ url('serveurs_datatable_update') }}",
-                data: {id: id},
-                dataType: 'json',
-                success: function (res) {
-                    $('#ajaxBookModel').html("Modifier Serveur");
-                    $('#ajax-book-model').modal('show');
-                    $('#id').val(res.id);
-                    $('#nom_serveur').val(res.nom_serveur);
-                    $('#numero_server').val(res.numero);
-                }
-            });
-
-        });
-
-        $('body').on('click', '.delete', function () {
-
-            if (confirm("Delete Record?") == true) {
-                var id = $(this).data('id');
-
-                // ajax
-                $.ajax({
-                    type: "POST",
-                    url: "{{ url('serveurs_datatable_delete') }}",
-                    data: {id: id},
-                    dataType: 'json',
-                    success: function (res) {
-
-                        var oTable = $('#datatable-ajax-crud').dataTable();
-                        oTable.fnDraw(false);
-                    }
-                });
-            }
-
-        });
-
-        $('body').on('click', '#btn-save', function (event) {
-            var id = $("#id").val();
-            var nom_serveur = $("#nom_serveur").val();
-            var numero_server = $("#numero_server").val();
-            $("#btn-save").html('Please Wait...');
-            $("#btn-save").attr("disabled", true);
-            $.ajax({
-                type: "POST",
-                url: "{{ url('serveurs_datatable_store') }}",
-                data: {
-                    id: id,
-                    nom_serveur: nom_serveur,
-                    numero_server: numero_server,
-                },
-                dataType: 'json',
-                success: function (res) {
-                    $("#ajax-book-model").modal('hide');
-                    var oTable = $('#datatable-ajax-crud').dataTable();
-                    oTable.fnDraw(false);
-                    $("#btn-save").html('Submit');
-                    $("#btn-save").attr("disabled", false);
-                }
-            });
-
-        });
     });
 </script>
 @section('ajax_data_table_js')
