@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
@@ -21,6 +22,11 @@ class AdminController extends Controller
 
         }
         return view('admin.dashboard.index');
+    }
+
+    public function retour()
+    {
+        return back();
     }
 
 

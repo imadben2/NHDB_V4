@@ -60,8 +60,9 @@ class ClientController extends Controller
     }
 
 
-    public function show(Clients $clients)
+    public function show($id)
     {
+return view('admin.clients.client_details');
 
     }
 

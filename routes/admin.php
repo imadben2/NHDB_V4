@@ -8,6 +8,8 @@ Route::group(['namespace' => 'Dashboard','middleware'=>'auth:admin','prefix' => 
 
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('logout','LoginController@logout')->name('admin.logout');
+    Route::get('retour', 'AdminController@retour')->name('retour');
+
 
 
 //////////////////////////////////// Route Serveur /////////////////////////////////////////
@@ -22,6 +24,12 @@ Route::group(['namespace' => 'Dashboard','middleware'=>'auth:admin','prefix' => 
     Route::post('clients_delete', 'ClientController@destroy');
     Route::post('clients_update', 'ClientController@edit');
     Route::post('clients_store', 'ClientController@store')->name('clients_store');
+
+
+
+    Route::get('client-details/{id}', 'ClientController@show')->name('showshow');
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// Route Formules /////////////////////////////////////////
     Route::get('indexMutalise', 'FormulController@index')->name('indexMutalise');

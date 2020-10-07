@@ -1,14 +1,11 @@
 @extends('layouts/theme')
-
 @section('content')
-
 @section('ajax_data_table_css')
     <link href="{{ asset('app-assets/vendors/css/tables/datatable/datatables.min.css')}}" rel="stylesheet">
     <script src="{{ asset('app-assets/js/scripts/tables/datatable/datatables.buttons.min.js')}}"></script>
     <script src="{{ asset('app-assets/js/scripts/tables/datatable/buttons.html5.min.js')}}"></script>
     <script src="{{ asset('app-assets/js/scripts/tables/datatable/buttons.bootstrap.min.js')}}"></script>
     <script src="{{ asset('app-assets/js/scripts/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
-
 @endsection
 <section id="basic-datatable">
     <div class="row">
@@ -16,16 +13,10 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Serveurs</h4>
-
                     <a href="{{route('clients_Ajouter')}}" class="btn btn-primary btn-print mr-1 mb-1" role="button" aria-pressed="true"><i
                             class="feather icon-plus"></i></a>
-
-
-
-
                 </div>
                 <div class="card-content">
-
                     <div class="card-body card-dashboard">
                         <table class="table zero-configuration" id="datatable-ajax-crud">
                             <thead>
@@ -37,7 +28,6 @@
                                 <th>Action</th>
                             </tr>
                             </thead>
-
                         </table>
 
                     </div>
@@ -46,13 +36,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
 
 
 <script type="text/javascript">
@@ -79,6 +62,20 @@
         });
 
 
+        $('body').on('click', '.voire', function () {
+                var id = $(this).data('id');
+             console.log(id);
+                // ajax
+                $.ajax({
+                    type: "GET",
+                    url: "{{ url('admin/show') }}",
+                    dataType: 'json',
+
+                });
+
+
+        });
+
     });
 </script>
 @section('ajax_data_table_js')
@@ -89,6 +86,5 @@
     <script src="{{ asset('app-assets/js/scripts/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
     <script src="{{ asset('app-assets/js/scripts/tables/datatable/datatable.js')}}"></script>
 @endsection
-
 
 @stop
