@@ -1,12 +1,25 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DataTablesController;
 
-Route::group(['namespace' => 'Dashboard','middleware'=>'auth:admin','prefix' => 'admin'], function () {
+
+Route::get('/', function () {
+    return redirect(route('login'));
+});
+
+Auth::routes();
+
+
+
+
+
+Route::group(['namespace' => 'Dashboard','middleware'=>'tom','prefix' => 'admin'], function () {
 
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
+
     Route::get('logout','LoginController@logout')->name('admin.logout');
     Route::get('retour', 'AdminController@retour')->name('retour');
 
@@ -49,11 +62,28 @@ Route::group(['namespace' => 'Dashboard','middleware'=>'auth:admin','prefix' => 
     Route::post('Vps_store', 'FormulController@store')->name('Vps_store');
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+    Route::get('/Otp', function () {
+        return view('admin.login.otp');
+    })->name('otp');
 
 
+});
+
+
+
+Route::group(['namespace' => 'Dashboard', 'prefix' => 'admin'], function () {
+
+
+Route::get('/VerifyOtp', 'LoginController@aficheOTP')->name('VerifyOtp');
+Route::post('/VerifyOtp', 'LoginController@verifierOTP')->name('VerifyOtppp');
 });
 
 Route::group(['namespace' => 'Dashboard', 'prefix' => 'admin', 'middleware' => 'guest:admin'], function () {
-    Route::get('login', 'LoginController@login')->name('admin.login');
-    Route::post('login', 'LoginController@postlogin')->name('admin.post.login');
+   // Route::get('Otp', 'LoginController@otp')->name('otp');
+
+
+
+   // Route::get('login', 'LoginController@login')->name('admin.login');
+   // Route::post('login', 'LoginController@postlogin')->name('admin.post.login');
 });
+

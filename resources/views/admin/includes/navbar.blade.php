@@ -147,8 +147,18 @@
                             <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">IMADE</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Modifier Profile</a><a class="dropdown-item" href="app-email.html">
-                                <i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="{{route('admin.logout')}}">
-                                <i class="feather icon-message-square"></i> Déconnexion</a>
+                                <i class="feather icon-mail"></i> My Inbox</a> <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                                  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}
+                            </a>
+
+
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
 
                             <div class="dropdown-divider">
 
