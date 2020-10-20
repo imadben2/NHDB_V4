@@ -23,7 +23,7 @@ Route::group(['namespace' => 'Dashboard','middleware'=>'tom','prefix' => 'admin'
     Route::get('logout','LoginController@logout')->name('admin.logout');
     Route::get('retour', 'AdminController@retour')->name('retour');
 
-
+    Route::get('/test', 'AdminController@test_envoi_email')->name('test_envoi_email');
 
 //////////////////////////////////// Route Serveur /////////////////////////////////////////
     Route::get('serveurs_datatable_index', 'ServeurController@index')->name('serveurs_datatable_index');

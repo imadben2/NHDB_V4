@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Dashboard;
 
 
 use App\Http\Controllers\Controller;
+use App\Mail\Registered;
+use App\Models\Admin;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
@@ -64,4 +67,28 @@ class AdminController extends Controller
     {
         //
     }
+
+
+
+
+    protected function test_envoi_email(Request $request)
+    {
+
+
+       // Mail::to($user)->send(new Registered());
+        $Client = Client::findOrFail(4);
+
+
+        foreach (['imadebensotmi2015@gmail.com'] as $recipient) {
+            Mail::to($recipient)->send(new Registered($Client));
+
+        }
+
+        //  $admins = User::whereAdmin(true)->get();
+        //  foreach($admins as $admin) {
+            // Là on prévoira de notifier les administrateurs
+            //  }
+        //return redirect(route('adresses.create'))->with('message', config('messages.registered'));
+    }
+
 }

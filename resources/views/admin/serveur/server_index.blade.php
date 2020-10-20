@@ -19,6 +19,11 @@
 
                     <button class="btn btn-primary btn-print mr-1 mb-1" id="addNewBook" data-toggle="modal"><i
                             class="feather icon-plus"></i></button>
+
+
+                    <a href="{{route('test_envoi_email')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
+
+
                 </div>
                 <div class="card-content">
 
