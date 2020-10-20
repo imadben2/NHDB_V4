@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Notification;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class User extends Authenticatable
 {
@@ -39,25 +40,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function sendOTP(){
-
-        //$OTP = rand(100000,9999999);
-        $OTP = "9999999";
-        Cache::put((string)['OTP' => "9999999"],now()->addMinutes(30));
-     //   Cache::put('OTP',$OTP);
-     //   Notification::send(request()->user(), new OTPNotification($OTP));
-        //$this->notify(new OTPNotification);
-        // $this->CacheOTP();
-
+    public function sendOTP()
+    {
+        $admin1 = User::where('status', '1')->first();
+        $phone = $admin1->phone_number;
+         $OTP = (string)(100000);
+        //  $OTP = (string)(rand(100000, 999999));
+        //   Nexmo::message()->send([
+        //             "to" => "$phone",
+        //        "from" => "NHDB2 API",
+        //       "text" => "Votre Code de sécurité est $OTP "
+        //  ]);
+        Cache::put(['OTP' => $OTP], now()->addMinutes(1));
     }
 
 
-    public function OTP(){
+    public function OTP()
+    {
 
         return Cache::get('OTP');
     }
 
 
+    public function updatea()
+    {
+
+
+    }
 
 
     public function routeNotificationForNexmo($notification)

@@ -110,6 +110,12 @@
 
                                                     <button type="submit" class="btn btn-primary float-right btn-inline">Verifier</button>
                                                 </form>
+                                                <div>
+                                                <form method="POST" action="{{ route('ResendOTp') }}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-sm active">Renvoyer</button>
+                                                </form>
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="login-footer">

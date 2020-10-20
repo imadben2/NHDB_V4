@@ -39,18 +39,8 @@ class LoginController extends Controller
             $this->credentials($request), $request->filled('remember')
         );
         if( $result){
-          //  auth()->user()->sendOTP();
-            $admin1 = User::where('status','1')->first();
-            $phone=$admin1->phone_number;
 
-            $OTP = rand(100000,999999);
-            $OTP = (string)(100000);
-            //     Nexmo::message()->send([
-            //     "to"   => "$phone",
-           //   "from" => "NHDB2 API",
-            //   "text" => "Votre Code de sécurité est $OTP "
-            //   ]);
-              Cache::put(['OTP' => $OTP],now()->addMinutes(1));
+            auth()->user()->sendOTP();
             return redirect(route('VerifyOtp'));
         }
 
@@ -60,7 +50,25 @@ class LoginController extends Controller
 
 
 
+    public function logout(Request $request)
+    {
+        $user = User::findOrFail(auth()->user()->id);
+        $user->isVerified = false;
+        $user->save();
+        $this->guard()->logout();
 
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        if ($response = $this->loggedOut($request)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('/');
+    }
 
 
     /**

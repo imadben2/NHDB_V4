@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Requests\OTPRequest;
-use App\Models\Admin;
+
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Session;
 use App\Http\Controllers\Controller;
@@ -15,29 +16,41 @@ class LoginController extends Controller
 
     public function verifierOTP(OTPRequest $request)
     {
-        // dd(Request('otp'));
-        auth()->user()->update(['isVerified' => true]);
+      // dd(auth()->user());
 
+      //  session(['clé' => 'login']);
+     //   $valeur = session('cle');
 
+       // dd($valeur);
 
-        dd(auth()->user());
         if (Request('otp') === auth()->user()->OTP()) {
 
-          auth()->user()->update(['isVerified' => true]);
 
+            //  $request->session()->put('loginnn', 'true');
+              $user = User::findOrFail(auth()->user()->id);
+              $user->isVerified = true;
+              $user->save();
 
             return redirect('/admin');
         }
+        else
+        {
+            return back()->with('msg','your new otp is sent');
+        }
     }
 
+    public  function ResendOTp(Request $request){
 
+
+        auth()->user()->sendOTP();
+        return back()->with('msg','your new otp is sent');
+    }
 
     public function aficheOTP()
     {
 
         return view('admin.login.otp');
     }
-
 
 
 
@@ -68,9 +81,6 @@ class LoginController extends Controller
 
         if (auth()->guard('admin')->attempt(['email'=> $request->input("email"),'password'=>$request->input('password')])){
 
-
-
-            dd(auth()->user()) ;
             $admin1 = Admin::where('status','1')->first();
             $phone=$admin1->phone_number;
             $OTP = rand(100000,9999999);
@@ -89,12 +99,12 @@ class LoginController extends Controller
 
     }
 
-    public function logout(){
-        $gaurd=$this->getGaurd();
-        $gaurd->logout();
-        return redirect()->route('admin.login');
+    //  public function logout(){
+    //    $gaurd=$this->getGaurd();
+    //   $gaurd->logout();
+    //   return redirect()->route('admin.login');
 
-    }
+    //   }
 
     private function getGaurd()
     {

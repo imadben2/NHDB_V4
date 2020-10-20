@@ -15,10 +15,19 @@ class TwoFA
      */
     public function handle($request, Closure $next)
     {
-        dd('helo');
-        if(auth()->user()->isVerified){
+
+
+
+        $valeur = session('clef');
+
+        dd($valeur);
+        if ($valeur == 'login') {
+
             return $next($request);
         }
+        //  if(auth()->user()->isVerified){
+        //      return $next($request);
+        //  }
 
         return redirect('/VerifyOtp');
     }

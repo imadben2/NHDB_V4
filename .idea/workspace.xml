@@ -19,26 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a7703b-ba03-4f42-a1b4-d2a5c3e1c097" name="Default Changelist" comment="debut client">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/OTPRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/OTPResend.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/login/otp.blade.php" afterDir="false" />
+    <list default="true" id="e5a7703b-ba03-4f42-a1b4-d2a5c3e1c097" name="Default Changelist" comment="otp">
+      <change afterPath="$PROJECT_DIR$/resources/views/client/includes/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/includes/navbar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/includes/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/theme.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TwoFA.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TwoFA.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/login/otp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login/otp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -75,23 +66,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/client" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\NHDB\NHDB_v41\NHDB_v4\app\Http\Controllers\Dashboard" />
-      <recent name="C:\NHDB\NHDB_v41\NHDB_v4\app\Http\Requests" />
-      <recent name="C:\NHDB\NHDB_v41\NHDB_v4\resources\views\admin\login" />
-      <recent name="C:\NHDB\NHDB_v4\resources\views\admin\clients" />
-      <recent name="C:\NHDB\NHDB_v4\app\Http" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\NHDB\NHDB_v41\NHDB_v4\app\Models" />
       <recent name="C:\NHDB\NHDB_v41\NHDB_v4\app" />
       <recent name="C:\NHDB\NHDB_v4\app\Models" />
       <recent name="C:\NHDB\NHDB_v4\app\Http\Controllers\Dashboard" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\NHDB\NHDB_v41\NHDB_v4\resources\views\client" />
+      <recent name="C:\NHDB\NHDB_v41\NHDB_v4\app\Http\Controllers\Dashboard" />
+      <recent name="C:\NHDB\NHDB_v41\NHDB_v4\app\Http\Requests" />
+      <recent name="C:\NHDB\NHDB_v41\NHDB_v4\resources\views\admin\login" />
+      <recent name="C:\NHDB\NHDB_v4\resources\views\admin\clients" />
     </key>
   </component>
   <component name="RunManager">
@@ -139,7 +130,19 @@
       <workItem from="1602066114170" duration="5886000" />
       <workItem from="1602101616682" duration="10432000" />
       <workItem from="1602163370287" duration="965000" />
-      <workItem from="1602234444556" duration="4121000" />
+      <workItem from="1602234444556" duration="4839000" />
+      <workItem from="1602242262658" duration="3606000" />
+      <workItem from="1602262602590" duration="3306000" />
+      <workItem from="1602283946245" duration="988000" />
+      <workItem from="1602363637721" duration="2374000" />
+      <workItem from="1602423656708" duration="1790000" />
+      <workItem from="1602440155218" duration="1800000" />
+      <workItem from="1602442364950" duration="618000" />
+      <workItem from="1602581979100" duration="674000" />
+      <workItem from="1603023973348" duration="5164000" />
+      <workItem from="1603101131157" duration="5865000" />
+      <workItem from="1603180460806" duration="19000" />
+      <workItem from="1603182073059" duration="400000" />
     </task>
     <task id="LOCAL-00001" summary="serveur fini">
       <created>1600775209249</created>
@@ -190,7 +193,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601541183809</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="otp">
+      <created>1602239726575</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602239726575</updated>
+    </task>
+    <task id="LOCAL-00009" summary="otp">
+      <created>1602239736031</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602239736031</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +231,8 @@
     <MESSAGE value="client 1" />
     <MESSAGE value="start formulee" />
     <MESSAGE value="debut client" />
-    <option name="LAST_COMMIT_MESSAGE" value="debut client" />
+    <MESSAGE value="otp" />
+    <option name="LAST_COMMIT_MESSAGE" value="otp" />
   </component>
   <component name="WindowStateProjectService">
     <state x="267" y="19" key="#Inspections" timestamp="1600725058798">
@@ -233,10 +251,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602239373804" />
-    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602238091329">
+    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602245975885">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602238091329" />
+    <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602245975885" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1602067689328">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -245,10 +263,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1600939188718" />
-    <state x="233" y="70" key="Vcs.Push.Dialog.v2" timestamp="1602066232439">
+    <state x="233" y="70" key="Vcs.Push.Dialog.v2" timestamp="1602265883858">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="70" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602066232439" />
+    <state x="233" y="70" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602265883858" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601541845833">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

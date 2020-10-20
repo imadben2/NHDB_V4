@@ -73,7 +73,7 @@ Route::group(['namespace' => 'Dashboard','middleware'=>'tom','prefix' => 'admin'
 
 Route::group(['namespace' => 'Dashboard', 'prefix' => 'admin'], function () {
 
-
+Route::post('/ResendOTp', 'LoginController@ResendOTp')->name('ResendOTp');
 Route::get('/VerifyOtp', 'LoginController@aficheOTP')->name('VerifyOtp');
 Route::post('/VerifyOtp', 'LoginController@verifierOTP')->name('VerifyOtppp');
 });
