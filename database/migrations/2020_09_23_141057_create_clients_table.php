@@ -18,6 +18,7 @@ class CreateClientsTable extends Migration
             $table->string('nom_client')->unique();
             $table->string('nom_contact')->unique();
             $table->string('fonction_contact');
+            $table->string('type');
             $table->longText('adresse_facturation');
             $table->float('tva');
             $table->float('remise');

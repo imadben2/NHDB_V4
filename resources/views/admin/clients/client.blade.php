@@ -12,7 +12,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Serveurs</h4>
+                    <h4 class="card-title">Clients</h4>
                     <a href="{{route('clients_Ajouter')}}" class="btn btn-primary btn-print mr-1 mb-1" role="button" aria-pressed="true"><i
                             class="feather icon-plus"></i></a>
                 </div>
